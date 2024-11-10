@@ -1,0 +1,27 @@
+site_name: Andreu
+theme:
+  name: 'material'
+  custom_dir: 'overrides'
+  palette:
+    primary: 'indigo'
+    accent: 'pink'
+    background: 'white'
+    surface: 'grey'
+    error: 'red'
+
+extra_css:
+  - 'overrides/extra.css'
+
+nav:
+  - Inicio: index.md
+  - Articulos EDD:
+    - Articulo 1: EDD/act_1.md
+    - Articulo 2: EDD/act_2.md
+    - Articulo 3: EDD/act_3.md
+    - Articulo 4: EDD/act_4.md
+    - Articulo 5: EDD/act_5.md
+    - Articulo 6: EDD/act_6.md
+  - Articulos LMI:
+    - Articulo 1: LMI/act_1.md
+    - Articulo 2: LMI/act_2.md
+    

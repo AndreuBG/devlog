@@ -1,0 +1,4 @@
+# Conflicto de intereses (scrum)
+> En una reunió de revisió de sprint hem tingut alguns problemes amb determinades tasques que no s'han dut a terme correctament o no s'han acabat a temps. En la reunió de planificació inicial, el Scrum Master ja va suggerir que determinats equips estaven sobrecarregats de treball, però el Product Owner va insistir que hi havia tasques que el client esperava veure prompte fetes. Què creieu que ha passat?  
+
+Parece que en el sprint planning el product owner y el scrum master no llegaron a una conclusión correcta sobre la cantidad de tareas a realizar, haciendo que no sea posible realizarlas a tiempo durante el sprint. Esto debrían haberlo corregido haciendo los daily scrum y corrigiendo la planificación del sprint.
