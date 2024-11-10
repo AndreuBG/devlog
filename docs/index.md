@@ -11,6 +11,3 @@ MkDocs s'utilitza principalment per:
 * Facilitar la col·laboració en projectes mitjançant una estructura de documentació clara i ben organitzada.  
 
 Al nostre cas, realitzarem un blog tècnic, on anirem documentant el que anem aprenent als mòduls d'Entorns de Desevolupament i Llenguatges de Marques, i que pot acabar convertint-se en els nostres propis apunts del mòdul.
-
-### Autor de los articulos
-Andreu Bifante grau
