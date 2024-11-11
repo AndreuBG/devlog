@@ -10,7 +10,7 @@ theme:
     error: 'red'
 
 extra_css:
-  - 'docs/overrides/extra.css'
+  - 'overrides/extra.css'
 
 nav:
   - Inicio: index.md

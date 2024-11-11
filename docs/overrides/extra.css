@@ -1,19 +1,12 @@
 body {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
 }
 
 h1 {
     color: #0004e4cb;
 }
 
-.custom-nav {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
-
-.custom-nav a {
-    color: #fff;
-    margin-right: 15px;
-    text-decoration: none;
+hr {
+    height: 3px;
+    background-color: rgb(0, 89, 255);
 }
