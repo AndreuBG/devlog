@@ -3,7 +3,7 @@ theme:
   name: 'material'
   custom_dir: 'docs/overrides'
   palette:
-    primary: 'lightcian'
+    primary: 'yellow'
     accent: 'pink'
     background: 'white'
     surface: 'grey'
