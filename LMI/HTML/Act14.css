@@ -1,0 +1,22 @@
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: lightseagreen;
+        }
+        .hora {
+            background-color: lightgoldenrodyellow ;
+            font-weight: bold;
+    
+        }
+        .patio {
+            text-align: center;
+            background-color: lightblue;
+            font-weight: bold;
+        }
