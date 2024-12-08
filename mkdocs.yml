@@ -26,9 +26,8 @@ nav:
       - Actividad 1: EDD/RSC/act1.md
       - Actividad 2: EDD/RSC/act2.md
       - Actividad 3: EDD/RSC/act3.md
-      - Actividad 4: EDD/RSC/act4.md
-      - Actividad 5: EDD/RSC/act5.md
-      - Actividad 6: EDD/RSC/act6.md
+    - Java with Ant: EDD/actividad_calculadora.md
+    - Java with Maven: EDD/actividad_maven.md
   - Articulos LMI:
     - Articulo 1: LMI/act_1.md
     - Articulo 2: LMI/act_2.md
