@@ -7,7 +7,6 @@ export class PizzaService {
 
     static async getAllPizzes() {
 
-        console.log("Llamando a la API:", this.API_URL);
         const respuesta = await fetch(this.API_URL);
 
         if (!respuesta.ok) throw new Error ("No se han podido cargar las pizzas");

@@ -78,9 +78,6 @@ export class etiquetaPizza extends HTMLElement {
             <div class="producto">
                 <h2>${nombre}</h2>
                 <img src="${this.serverURL}${img}" alt="${nombre}">
-                <div class="alergenos">
-                    <lista-alergenos pizza-alergenos="${alergenos}"></lista-alergenos>
-                </div>
                 <p><b>Descripción:</b> ${descripcion}</p><br>
                 <p>${esVegetariana}</p>
                 <p class="precio"><b>Precio:</b> ${precio} €</p>
