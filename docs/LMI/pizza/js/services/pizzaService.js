@@ -1,11 +1,13 @@
 import { Pizza } from "/js/models/pizza.js";
 
-//import { ListaAlergenos } from "../components/listaAlergenos";
 
 export class PizzaService {
+    
     static API_URL = 'https://pizza-rest-server-production.up.railway.app/api/pizzeria/pizzes'
 
     static async getAllPizzes() {
+
+        console.log("Llamando a la API:", this.API_URL);
         const respuesta = await fetch(this.API_URL);
 
         if (!respuesta.ok) throw new Error ("No se han podido cargar las pizzas");
@@ -18,7 +20,7 @@ export class PizzaService {
         //Recorrer lista
         for (let i = 0; i < datos.length; i++) {
             const pizza = new Pizza(datos[i]);
-            // pizza.alergenos = ListaAlergenos(pizza.alergenos);
+
             pizzas.push(pizza);
             
         }

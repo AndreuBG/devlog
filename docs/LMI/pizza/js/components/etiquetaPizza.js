@@ -1,91 +1,92 @@
-export class etiquetaPizza extends HTMLElement{
+export class etiquetaPizza extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({mode : 'open'});
-        this.serverURL = 'https://pizza-rest-server-production.up.railway.app'
+        this.attachShadow({ mode: 'open' });
+        this.serverURL = 'https://pizza-rest-server-production.up.railway.app/';
     }
 
     connectedCallback() {
         const nombre = this.getAttribute('pizza-nom') || 'Pizza desc';
         const precio = this.getAttribute('pizza-preu') || 'Precio desconocido';
-        const vegetariana = this.getAttribute('pizza-vegetariana') || 'Vegetariana???';
+        const vegetariana = this.getAttribute('pizza-vegetariana') === 'true';
         const descripcion = this.getAttribute('pizza-desc') || 'Pizza desconocida';
-        const alergenos = this.getAttribute('pizza-alergens') ||'';
+        const alergenos = this.getAttribute('pizza-alergenos') || '';
         const img = this.getAttribute('pizza-img') || '';
 
-        let es_vegetariana = ""
-        if (vegetariana) {
-            es_vegetariana = "VEGETARIANA"
-        }
-        
+        let esVegetariana = vegetariana ? "VEGETARIANA" : "";
+
         this.shadowRoot.innerHTML = `
             <style>
-                h2 {
-                    color: green;
-                    font-family: 'Courier New', Courier, monospace;
+                * {
+                    box-sizing: border-box;
+                    margin: 0;
+                    padding: 0;
                 }
 
-                div.producto {
-                    display: inline-block;
-                    margin: 20px;
+                .producto {
+                    width: 500px; /* Ancho fijo */
+                    height: 400px; /* Alto fijo */
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between; /* Distribuye el espacio */
+                    align-items: center;
                     background-color: white;
-                    padding: 10px;
+                    padding: 15px;
                     border: 3px solid green;
                     text-align: center;
-                    transition: transform 0.5s;
+                    transition: transform 0.3s;
                 }
 
-                div.contenedor {
-                    display: inline-grid;
-                    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-                    width: 100%;
-                    
-                }
-
-                div.producto:hover {
-                    transform: scale(1.3);
+                .producto:hover {
+                    transform: scale(1.05);
                     background-color: lightyellow;
                 }
 
-
-                img {
-                    width: 40%;
-                    
+                h2 {
+                    color: green;
+                    font-family: 'Courier New', Courier, monospace;
+                    font-size: 18px;
+                    text-align: center;
+                    margin-bottom: 10px;
                 }
 
-                img.alergenos {
-                    display: inline-block;
-                    align-content: center;
-                    width: 50px;
-                    height: 50px;
-                    vertical-align: middle;
-                    margin: 7px;
+                img {
+                    width: 50%;
+                    object-fit: contain;
+                }
+
+                .alergenos {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    gap: 5px;
+                    margin: 10px 0;
                 }
 
                 p {
-                    text-align: left;
-                    margin-left: 50px;
-                    margin-right: 30px;
+                    font-size: 14px;
+                    text-align: center;
+                    
+                }
+
+                .precio {
+                    font-weight: bold;
+                    font-size: 16px;
+                    margin-top: auto; /* Empuja hacia abajo */
                 }
             </style>
             <div class="producto">
-                <h2> ${nombre} </h2>
-                ${alergenos}
-            <img src="${this.serverURL}${img}">
-            <br>${alergenos}
-            
-            <p> <b>Descripcion:</b> ${descripcion} </p>
-            <p>${es_vegetariana}</p>
-            <p> <b>Precio:</b> ${precio} €</p>
-            </div>;
-
-        
-        
-        
-        
-        
-        `
+                <h2>${nombre}</h2>
+                <img src="${this.serverURL}${img}" alt="${nombre}">
+                <div class="alergenos">
+                    <lista-alergenos pizza-alergenos="${alergenos}"></lista-alergenos>
+                </div>
+                <p><b>Descripción:</b> ${descripcion}</p><br>
+                <p>${esVegetariana}</p>
+                <p class="precio"><b>Precio:</b> ${precio} €</p>
+            </div>
+        `;
     }
-    
 }
-customElements.define('pizza', etiquetaPizza);
+
+customElements.define('pizza-card', etiquetaPizza);
