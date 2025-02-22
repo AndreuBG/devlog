@@ -6,11 +6,14 @@ export class etiquetaPizza extends HTMLElement {
     }
 
     connectedCallback() {
+        const listaAlergenos = document.createElement('lista-alergenos');
+        listaAlergenos.getAttribute('pizza-alergenos', '¡Hola desde el contenedor!');
+
+        const id = this.getAttribute('pizza-id') || 'Pizza desc';
         const nombre = this.getAttribute('pizza-nom') || 'Pizza desc';
         const precio = this.getAttribute('pizza-preu') || 'Precio desconocido';
         const vegetariana = this.getAttribute('pizza-vegetariana') === 'true';
         const descripcion = this.getAttribute('pizza-desc') || 'Pizza desconocida';
-        const alergenos = this.getAttribute('pizza-alergenos') || '';
         const img = this.getAttribute('pizza-img') || '';
 
         let esVegetariana = vegetariana ? "VEGETARIANA" : "";
@@ -24,11 +27,10 @@ export class etiquetaPizza extends HTMLElement {
                 }
 
                 .producto {
-                    width: 500px; /* Ancho fijo */
-                    height: 400px; /* Alto fijo */
+                    width: 500px; 
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between; /* Distribuye el espacio */
+                    justify-content: space-between;
                     align-items: center;
                     background-color: white;
                     padding: 15px;
@@ -50,17 +52,9 @@ export class etiquetaPizza extends HTMLElement {
                     margin-bottom: 10px;
                 }
 
-                img {
+                .imgP {
                     width: 50%;
                     object-fit: contain;
-                }
-
-                .alergenos {
-                    display: flex;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                    gap: 5px;
-                    margin: 10px 0;
                 }
 
                 p {
@@ -72,18 +66,26 @@ export class etiquetaPizza extends HTMLElement {
                 .precio {
                     font-weight: bold;
                     font-size: 16px;
-                    margin-top: auto; /* Empuja hacia abajo */
+                    margin-top: auto;
                 }
+
+                lista-alergenos {
+                    padding-bottom: 10px;
+                }
+
             </style>
             <div class="producto">
                 <h2>${nombre}</h2>
-                <img src="${this.serverURL}${img}" alt="${nombre}">
+                <img class="imgP" src="${this.serverURL}${img}" alt="${nombre}">
+                <lista-alergenos pizza-alergenos="${this.getAttribute('pizza-alergenos') || ''}"></lista-alergenos>
                 <p><b>Descripción:</b> ${descripcion}</p><br>
                 <p>${esVegetariana}</p>
                 <p class="precio"><b>Precio:</b> ${precio} €</p>
+                <div id="alergenos-container"></div>
             </div>
         `;
     }
+
 }
 
 customElements.define('pizza-card', etiquetaPizza);

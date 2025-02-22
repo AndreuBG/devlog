@@ -14,9 +14,14 @@ export class ListaAlergenos extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
             <style>
-                img.alergenos { width: 50px; height: 50px; margin-right: 8px; vertical-align: middle; }
+                img.alergenos { 
+                    width: 50px; 
+                    height: 50px; 
+                    margin-right: 8px; 
+                    vertical-align: middle;
+                }
             </style>
-            <div class="alergenos">${alergenosHTML}</div>
+            <div>${alergenosHTML}</div>
         `;
     }
 }

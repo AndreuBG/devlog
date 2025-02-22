@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const lista = document.getElementById('contenedor');
 
         pizzes.forEach(p => {
-            lista.insertAdjacentHTML('beforeend', '<div id="' + p.id + '">')
             const pizzaElement = document.createElement('pizza-card');
             pizzaElement.setAttribute('pizza-id', p.id);
             pizzaElement.setAttribute('pizza-desc', p.descripcion);
@@ -16,13 +15,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             pizzaElement.setAttribute('pizza-vegetariana', p.es_vegetariana);
             pizzaElement.setAttribute('pizza-preu', p.precio);
             pizzaElement.setAttribute('pizza-img', p.img);
-
-            const alergenoElement = document.createElement('lista-alergenos');
-            alergenoElement.setAttribute('pizza-alergenos', p.alergenos);
+            pizzaElement.setAttribute('pizza-img', p.img);
+            pizzaElement.setAttribute('pizza-alergenos', p.alergenos.join(','));
 
             lista.appendChild(pizzaElement);
-            document.getElementById(p.id).appendChild(alergenoElement);
-            lista.insertAdjacentHTML('beforeend', '</div>')
+
+
         });
     } catch (error) {
         console.error("Error cargando las pizzas", error);
